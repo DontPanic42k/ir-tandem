@@ -1,6 +1,8 @@
 import '../scss/fonts.scss'
 import '../scss/reset.scss'
 
+import '../js/swiper-scripts'
+import '../js/forms'
 
 
 // мобильное меню
