@@ -193,10 +193,10 @@ h2{
 		}
 
 		&__to-up {
-            position: absolute;
+            position: fixed;
             bottom: 78px;
             right: 70px;
-            z-index: 5;
+            z-index: 50;
             a{
                 display: block;
                 background: url(../images/arrow-up.svg) no-repeat center center;
@@ -525,6 +525,46 @@ h2{
                 }
             }
 		}
+}
+
+
+
+// Мобильное меню slicknav_menu
+
+.slicknav_menu{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.slicknav_menu .topbar-logo{
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    z-index: 5;
+}
+
+.slicknav_menu .topbar-tel{
+    position: absolute;
+    top: 14px;
+    right: 60px;
+    z-index: 5;
+}
+
+.slicknav_nav{
+    background: #000;
+}
+
+.slicknav_menu .topbar-menu{
+
+}
+
+.slicknav_menu .topbar-menu ul{
+    display: block;
 }
 
 
