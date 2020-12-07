@@ -27,15 +27,21 @@ $("a.scroll").click(function (e) {
     
 });
 
+$('.scroll-block-good').on('click', function(e){
+    e.preventDefault();
+    
+    jQuery("html:not(:animated),body:not(:animated)").animate({scrollTop: $(window).height() }, 800);
+});
+
 
 // показываем/скрываем стрелку "наверх" в зависимости от скролла экрана
 $(window).on('scroll', function(){
     let currentTop = $(window).scrollTop();
     let windowHeight = $(window).height();
     if(+currentTop >= +windowHeight*0.7){
-        $('.index-first-screen__to-up').fadeIn(300);
+        $('.link-to-up').fadeIn(300);
     } else {
-        $('.index-first-screen__to-up').fadeOut(300);
+        $('.link-to-up').fadeOut(300);
     }
 });
 
@@ -45,7 +51,10 @@ $(window).on('scroll', function(){
 
 import '../scss/main.scss'
 import '../scss/page-about.scss'
-import '../scss/main-media.scss'
+import '../scss/page-services.scss'
+import '../scss/page-services-elev.scss'
+import '../scss/page-services-bus.scss'
 
+import '../scss/main-media.scss'
 import '../scss/menu-mobile.scss'
 

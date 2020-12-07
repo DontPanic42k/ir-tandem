@@ -175,9 +175,14 @@ let swiper_block_our_team = () => {
 
 
 
+if( $('body').find('.sw-1').length > 0 ){
+    swiper_block_news();
+}
 
-swiper_block_news();
-swiper_block_our_team();
+if( $('body').find('.sw-2').length > 0 ){
+    swiper_block_our_team();
+}
+
 
 
 

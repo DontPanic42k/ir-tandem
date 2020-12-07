@@ -1,0 +1,134 @@
+.page-services-bus {
+    .container {
+    }
+    margin-bottom: 150px;
+}
+.h2-grey {
+    columns: #adadad;
+}
+.page-services-bus-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.page-services-bus-list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 27px;
+    width: 100%;
+    min-height: 423px;
+    box-sizing: border-box;
+    
+    background: #1D1D20;
+    padding-top: 46px;
+    padding-bottom: 51px;
+		&__ava {
+            width: 36%;
+            img{
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        
+        @media only screen and (max-width : 1200px) {
+            &__ava{
+                img{
+                    width: 70%;
+                }
+            }
+        }
+
+        @media only screen and (max-width : 900px) {
+            &__ava{
+                width: 30%;
+            }
+        }
+
+        @media only screen and (max-width : 500px) {
+            &__ava{
+                display: none;
+            }
+        }
+}
+.page-services-bus-list-item-info {
+    display: flex;
+    // align-items: center;
+    // justify-content: center;
+    flex-wrap: wrap;
+    width: 64%;
+    box-sizing: border-box;
+		&__description {
+            font-size: 20px;
+            line-height: 1.15;
+            color: #ADADAD;
+            padding-right: 20px;
+            p{
+                font-size: 20px;
+                line-height: 1.15;
+                color: #ADADAD;
+                margin-bottom: 1.15em;
+            }
+		}
+
+		&__buttons {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: nowrap;
+            .btn:first-of-type{
+                margin-right: 29px;
+            }
+        }
+        
+        @media only screen and (max-width : 1200px) {
+            &__description{
+                font-size: 18px;
+                p{
+                    font-size: 18px;
+                }
+            }
+            &__buttons{
+                padding-right: 20px;
+                .btn{
+                    text-align: center;
+                }
+            }
+        }
+        
+
+        @media only screen and (max-width : 900px) {
+            &{
+                width: 70%;
+            }
+
+            &__buttons{
+                display: block;
+                .btn{
+                    margin-bottom: 20px;
+                    margin-right: 0 !important;
+                }
+            }
+        }
+
+        @media only screen and (max-width : 768px) {
+            &__buttons{
+                .btn{
+                    font-size: 14px;
+                    width: calc(100% - 40px);
+                    height: 40px;
+                    padding-left: 1.3em;
+                    padding-right: 1.3em;
+                }
+            }
+        }
+
+        @media only screen and (max-width : 500px) {
+            &{
+                padding-left: 20px;
+                width: 100%;
+            }
+        }
+}
