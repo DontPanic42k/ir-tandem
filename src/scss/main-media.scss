@@ -75,12 +75,13 @@
     
     // mobile menu
     body{
-        padding-top: 50px;
+        // padding-top: 50px;
+        padding-top: 86px;
     }
     
     .slicknav_menu{
         display: block;
-        background: #000;
+        background: #0E0D16;
     }
 
     .main .topbar{
@@ -191,12 +192,16 @@
 
 @media only screen and (max-width : 768px) {
     .block-services-list{
-        flex-wrap: wrap;
+        // flex-wrap: wrap;
+        overflow-x: scroll;
+        overflow-y: hidden;
     }
 
     .block-services-item{
-        width: 100%;
+        // width: 100%;
+        min-width: 280px;
         margin-bottom: 26px;
+        margin-right: 20px;
     }
 
     .block-partners-item{
@@ -363,7 +368,7 @@
 
 @media only screen and (max-width : 374px) {
     .slicknav_menu .topbar-logo{
-        display: none;
+        // display: none;
     }
 }
 

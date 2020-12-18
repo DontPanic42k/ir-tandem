@@ -3,12 +3,79 @@
 .slicknav_btn{
     background: transparent;
     border: 1px solid #EF7F1A;
+    float: left;
+    padding: 0;
+    border: none;
+    margin-left: 20px;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.slicknav_menu .slicknav_icon{
+    width: auto;
+    height: auto;
 }
 
 .slicknav_menu .slicknav_icon-bar{
     background: #EF7F1A;
+    width: 31px;
+    height: 2px;
+}
+
+.slicknav_btn .slicknav_icon-bar+.slicknav_icon-bar{
+    margin-top: 6px;
 }
 
 .slicknav_menu .slicknav_menutxt{
     text-shadow: none;
+}
+
+
+
+
+
+@media only screen and (max-width : 1240px) {
+    .slicknav_menu{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+
+    .slicknav_menu:before,
+    .slicknav_menu:after{
+        display: none;
+    }
+
+    .topbar-tel{
+        margin-right: 20px;
+        a{
+            width: 29px;
+            height: 29px;
+            color: transparent;
+            background-size: 100% 100%;
+        }
+    }
+}
+
+.slicknav_nav{
+    position: fixed;
+    top: 86px;
+    left: 0px;
+    width: 100%;
+    background: #0E0D16;
+    padding-bottom: 20px;
+
+    ul{
+        margin: 0;
+        li{
+            a{
+                font-size: 20px;
+                padding-top: 0.5em;
+                padding-bottom: 0.5em;
+                padding-left: 20px;
+            }
+        }
+    }
 }

@@ -12,8 +12,8 @@ $(function(){
     $('.topbar-menu').slicknav({
         label: ''
     });
-    $('.slicknav_menu').prepend( $('.main .topbar-logo')[0].outerHTML );
-    $('.slicknav_menu').prepend( $('.main .topbar-tel')[0].outerHTML );
+    $('.slicknav_menu').append( $('.main .topbar-logo')[0].outerHTML );
+    $('.slicknav_menu').append( $('.main .topbar-tel')[0].outerHTML );
 });
 
 
@@ -47,6 +47,17 @@ $(window).on('scroll', function(){
 
 
 
+// клик в новость на мобильных (т.к. нет кнопки "подробнее")
+if( +$(window).width() <= 768 ){
+    $('.block-news-list .block-news-list-item').on('click', function(e){
+        e.preventDefault();
+        
+        location = $(this).find('.block-news-list-item__button a').attr('href');
+    });
+}
+
+
+
 
 
 import '../scss/main.scss'
@@ -54,7 +65,9 @@ import '../scss/page-about.scss'
 import '../scss/page-services.scss'
 import '../scss/page-services-elev.scss'
 import '../scss/page-services-bus.scss'
+import '../scss/page-portfolio.scss'
 
+import '../scss/visual.scss'
 import '../scss/main-media.scss'
 import '../scss/menu-mobile.scss'
 

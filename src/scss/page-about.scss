@@ -27,58 +27,7 @@
 
 
 
-    .swiper-nav-custom{
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        flex-wrap: nowrap;
 
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 1.166666666666667;
-        display: flex;
-        align-items: center;
-        letter-spacing: 0.02em;
-    
-        color: #393949;
-        margin-bottom: 50px;
-
-        [data-slide_count="current"]{
-            color: #CFCFCF;
-        }
-    }
-
-    
-
-    .swiper-button-prev{
-        margin-right: 12px;
-        margin-top: 0;
-        width: 31px;
-        height: 23px;
-        background: url(../images/slider-arrow-left.svg) no-repeat center center;
-
-        position: relative;
-        left: auto;
-        // z-index: 5;
-        &::after{
-            content: ' ';
-        }
-    }
-
-    .swiper-button-next{
-        margin-left: 10px;
-        margin-top: 0;
-        width: 31px;
-        height: 23px;
-        background: url(../images/slider-arrow-right.svg) no-repeat center center;
-
-        position: relative;
-        right: auto;
-        // z-index: 5;
-        &::after{
-            content: ' ';
-        }
-    }
 }
 
 .block-news-info{
@@ -102,7 +51,10 @@
 }
 
 .block-news-list-item {
-    
+    // cursor: pointer;
+    position: relative;
+    z-index: 5;
+
     &__ava {
         width: 100%;
         height: 264px;
@@ -126,12 +78,61 @@
         line-height: 1.166666666666667;
         color: #A0A0A0;
     }
+
+    &__button{
+        margin-top: 31px;
+        opacity: 0;
+        transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1.0) 0s;
+        .block-news-list-item:hover &{
+            opacity: 1;
+        }
+
+        @media only screen and (max-width : 768px) {
+            display: none !important;
+        }
+    }
+
+
+
+
 }
 
-.block-news-list-button{
-    text-align: center;
-    margin-top: 31px;
+
+
+
+.block-news .swiper-slide{
+    position: relative;
+
+    &::before{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 1;
+        margin-top: -375.5px;
+        margin-left: -363px;
+
+        content: ' ';
+        // display: block;
+        background: url(../images/news-item-blur.png) no-repeat center center;
+        width: 726px;
+        height: 751px;
+        
+        display: none;
+        opacity: 0;
+        transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1.0) 0s;
+
+        transform: scale(0.7);
+    }
+
+    &:hover:before{
+        display: block;
+        opacity: 1;
+    }
 }
+
+
+
+
 
 
 

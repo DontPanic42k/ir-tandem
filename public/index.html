@@ -7,6 +7,11 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoDsMME1U_GJS8LsvHOaoEQEJk9q01obw" async defer></script>
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -14,17 +19,17 @@
 
         <div class="topbar">
             <div class="topbar-logo">
-                <a href="/"><img src="images/logo.svg" alt="Тандем Уфа"></a>
+                <a href="/public/"><img src="images/logo.svg" alt="Тандем Уфа"></a>
             </div>
             <div class="topbar-menu">
                 <ul>
-                    <li><a href="#">О компании </a></li>
-                    <li><a href="#">Услуги</a></li>
-                    <li><a href="#">Производство</a></li>
-                    <li><a href="#">Портфолио</a></li>
-                    <li><a href="#">Специальные предложения</a></li>
-                    <li><a href="#">Полезно знать</a></li>
-                    <li><a href="#">Контакты</a></li>
+                    <li><a href="page-about.html">О компании </a></li>
+                    <li><a href="page-services.html">Услуги</a></li>
+                    <!-- <li><a href="#">Производство</a></li> -->
+                    <li><a href="page-portfolio.html">Портфолио</a></li>
+                    <!-- <li><a href="#">Специальные предложения</a></li> -->
+                    <!-- <li><a href="#">Полезно знать</a></li> -->
+                    <li><a href="page-contacts.html">Контакты</a></li>
                 </ul>
             </div>
             <div class="topbar-tel">
@@ -34,9 +39,8 @@
 
 
 
-        <div class="index-first-screen">
+        <!-- <div class="index-first-screen">
             <div class="index-first-screen__image">
-                <!-- <img src="images/index-first-screen.jpg" alt="В процессе разработки"> -->
             </div>
             <div class="index-first-screen__description">
                 В процессе<br>разработки
@@ -44,8 +48,42 @@
             <div class="index-first-screen__to-down">
                 <a href="#" class="scroll-block-good">листай ниже</a>
             </div>
-        </div><!-- .index-first-screen -->
+        </div> -->
+        <!-- .index-first-screen -->
+        <div class="visual-wrapper">
+            <div class="visual">
+                <div class="visual-screen custom-scrollbar-horizontal" data-id="1" data-active="1">
+                    <div class="visual-bg">
+                        <img src="images/visual-bg.jpg" alt="Визуализация">
+                    </div>
+                    <div class="visual-elements">
+                        <div class="visual-elements__item">
+                            <a href="/services/fasady-zdaniy/" data-id="1"><span class="vei-square"></span>Реклама на фасадах</a>
+                            <a href="#" data-id="2" class="vei-corner-left"><span class="vei-square"></span>Реклама в лифте</a>
+                            <a href="/services/afishnye-i-pripodezdnye-stendy/" data-id="3"><span class="vei-square"></span>Приподъездный стенд</a>
+                            <a href="/services/afishnye-i-pripodezdnye-stendy/" data-id="4"><span class="vei-square"></span>Реклама на афише</a>
+                            <a href="/services/ostanovochnye-pavilony/" data-id="5"><span class="vei-square"></span>Реклама на щитах</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="visual-screen custom-scrollbar-horizontal" data-id="2" data-active="0" style="display: none;">
+                    <div class="visual-bg">
+                        <img src="images/visual-2-bg.jpg" alt="Визуализация">
+                    </div>
+                    <div class="visual-elements" style="display: none;">
+                        <div class="visual-elements__item">
+                            <a href="#" data-id="1"><span class="vei-arrow"></span>Назад</a>
+                            <a href="/services/razmeshchenie-reklamy-v-liftakh/" class="vei-corner-right" data-id="2">Стенды в лифты<span class="vei-square"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="index-first-screen__to-down">
+                <a href="#" class="scroll-block-good">листай ниже</a>
+            </div>
+        </div>
+        <script src="js/visual.js"></script>
 
 
         <div class="block-good" id="block-good">
@@ -146,7 +184,16 @@
             <div class="container">
                 <h2>Акции</h2>
 
-                <div class="block-stock-zzz"></div>
+                <!-- <div class="block-stock-zzz"></div> -->
+                <div class="block-stock-content">
+                    <div class="block-stock-content__title">
+                        Узнайте о Вашем <b>индивидуальном предложении</b>
+                    </div>
+                    <div class="block-stock-content__button">
+                        <a href="#callorder" class="btn btn-orange" data-fancybox="">Свяжитесь с нами за 1 минуту</a>
+                    </div>
+                </div>
+
             </div>
         </div><!-- .block-stock -->
 
@@ -199,9 +246,19 @@
         
 
 
+
+
+
+
+
+    
+
+
+
         <div class="block-contacts">
             <div class="block-contacts-map">
-                КАРТА
+                <!-- <div id="map"></div> -->
+                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A31931793e9c47c92ee2fca05e399821713652e1a01fbf8b295408b7c74058adb&amp;width=100%25&amp;height=516&amp;lang=ru_RU&amp;scroll=true"></script>
             </div>
             <div class="block-contacts-info">
                 <h2>Контакты</h2>
@@ -214,7 +271,7 @@
                 <a href="#" class="block-contacts-info__link-action block-contacts-info__link-action_route">Проложить маршрут</a>
                 <a href="#" class="block-contacts-info__link-action block-contacts-info__link-action_taxi">Вызвать такси</a>
                 <div class="block-contacts-info__button">
-                    <a href="#" class="btn btn-orange">Связаться</a>
+                    <a href="#callorder" class="btn btn-orange" data-fancybox="">Связаться</a>
                 </div>
             </div>
         </div><!-- .block-contacts -->
@@ -230,7 +287,7 @@
                 </div>
                 <div class="block-footer-copyright">&copy; 2020 Тандем | Все права защищены</div>
                 <div class="block-footer-button">
-                    <a href="#" class="btn btn-orange_reverse">Заказать звонок</a>
+                    <a href="#callorder" class="btn btn-orange_reverse" data-fancybox="">Заказать звонок</a>
                 </div>
             </div>
         </div><!-- .block-footer -->
@@ -250,6 +307,63 @@
 
 
     </div><!-- .main -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Модальная форма -->
+<div style="display:none;">
+<div class="modal-form-std" id="callorder">
+    <div class="modal-form-std-wrapper">
+            <div class="modal-head">
+                Заказать звонок
+            </div>
+            <div id="form-zakazat-zvonok1" class="form-modal myform">
+                <input type="text" name="fio" placeholder="Ваше имя" />
+                <br />
+                <input type="text" name="tel" placeholder="Номер телефона" />
+                <br>
+                <textarea name="message" placeholder="Сообщение"></textarea>
+                <!-- <input type="hidden" name="goals_name" value="" /> -->
+
+                <div class="modal-form-leg">
+                    Отправляя любую форму на сайте, вы
+                    <br>
+                    соглашаетесь с политикой конфиденциальности
+                    <br>
+                    данного сайта.
+                </div>
+
+                <div class="myform-button">
+                    <a href="#" class="btn btn-orange myform-submit">Отправить</a>
+                </div>
+                
+                
+            </div>
+    </div>
+</div>
+</div>
+<!-- / Модальная форма -->
+
+
+
 
     
     <div class="link-to-up" style="display: none;">

@@ -1,5 +1,5 @@
 .page-services {
-    background: url(../images/services-blur.png) no-repeat 75% -120px;
+    // background: url(../images/services-blur.png) no-repeat 75% -120px;
 }
 .page-services-list {
     display: flex;
@@ -17,10 +17,50 @@
     margin-right: 33px;
     width: calc(100% / 2 - 33px * 1 / 2);
     min-height: 239px;
-    background: #1D1D20;
+    position: relative;
+
+    &::before{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 1;
+        margin-top: -375.5px;
+        margin-left: -418px;
+
+        content: ' ';
+        // display: block;
+        background: url(../images/services-blur.png) no-repeat center center;
+        width: 836px;
+        height: 751px;
+        
+        display: none;
+        opacity: 0;
+        transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1.0) 0s;
+
+        transform: scale(0.7);
+    }
+
+    &:hover:before{
+        display: block;
+        opacity: 1;
+    }
 
     &:nth-of-type(2n){
         margin-right: 0;
+    }
+
+    > a{
+        position: relative;
+        z-index: 5;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        text-decoration: none;
+        
+        min-height: 239px;
+        background: #1D1D20;
     }
     
 		&__ava {

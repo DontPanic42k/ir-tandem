@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рекламное агентство "Тандем"</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- Маска для телефона -->
+    <script src="js/jquery.maskedinput.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    jQuery(function($){
+        $('input[name="tel"]').mask("+7 (999) 999 99 99");
+    });
+    </script>
+    <!-- Маска для телефона -->
+
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="main" id="main">
+
+        <div class="topbar">
+            <div class="topbar-logo">
+                <a href="/public/"><img src="images/logo.svg" alt="Тандем Уфа"></a>
+            </div>
+            <div class="topbar-menu">
+                <ul>
+                    <li><a href="page-about.html">О компании </a></li>
+                    <li><a href="page-services.html">Услуги</a></li>
+                    <!-- <li><a href="#">Производство</a></li> -->
+                    <li><a href="page-portfolio.html">Портфолио</a></li>
+                    <!-- <li><a href="#">Специальные предложения</a></li> -->
+                    <!-- <li><a href="#">Полезно знать</a></li> -->
+                    <li><a href="page-contacts.html">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="topbar-tel">
+                <a href="tel:+73472588557">+7 (347) 2-588-557</a>
+            </div>
+        </div><!-- .topbar -->
+
+
+
+        <div class="breadcrumbs">
+            <div class="container">
+                <span class="breadcrumbs__item"><a href="/">Главная</a></span> / 
+                <span class="breadcrumbs__item breadcrumbs__item_current">Контакты</span>
+            </div>
+        </div><!-- .breadcrumbs -->
+
+
+
+        <div class="page-contacts">
+            <div class="container">
+                <h2>Контакты</h2>
+
+                <div class="block-contacts-info__item">
+                    <span class="block-contacts-info__item_grey">телефон:</span> <a href="tel:+73472588557">+7 (347) 2-588-557</a>
+                </div>
+                <div class="block-contacts-info__item">
+                    <span class="block-contacts-info__item_grey">почта:</span> tandemufa@mail.ru
+                </div>
+                <div class="block-contacts-info__item">
+                    <span class="block-contacts-info__item_grey">адрес:</span> г. Уфа, ул. Менделеева, 137
+                </div>
+
+                <div class="page-contacts-map">
+                    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A31931793e9c47c92ee2fca05e399821713652e1a01fbf8b295408b7c74058adb&amp;width=100%25&amp;height=516&amp;lang=ru_RU&amp;scroll=true"></script>
+                </div>
+            </div>
+        </div><!-- .page-contacts -->
+
+
+
+
+
+
+
+
+
+
+        <div class="block-footer">
+            <div class="container">
+                <div class="block-footer-social">
+                    <a href="#" class="block-footer-social__item block-footer-social__item_vk" target="_blank"></a>
+                    <a href="#" class="block-footer-social__item block-footer-social__item_inst" target="_blank"></a>
+                    <a href="#" class="block-footer-social__item block-footer-social__item_fb" target="_blank"></a>
+                </div>
+                <div class="block-footer-copyright">&copy; 2020 Тандем | Все права защищены</div>
+                <div class="block-footer-button">
+                    <a href="#" class="btn btn-orange_reverse">Заказать звонок</a>
+                </div>
+            </div>
+        </div><!-- .block-footer -->
+
+
+
+        <div class="block-footer-ir">
+            <div class="container">
+                <div class="block-footer-ir__logo-ir">
+                    <a href="#"><img src="images/logo-ir.svg" alt="ИНТЕРНЕТ РЕШЕНИЯ"></a>
+                </div>
+                <div class="block-footer-ir__privacy-policy">
+                    Отправляя любую форму на сайте, вы соглашаетесь с <a href="#">политикой<br>конфиденциальности</a> данного сайта.
+                </div>
+            </div>
+        </div><!-- .block-footer-ir -->
+
+
+    </div><!-- .main -->
+
+    <script src="js/main.js"></script>
+</body>
+</html>
