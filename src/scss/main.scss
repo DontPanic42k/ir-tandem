@@ -2,6 +2,8 @@ body{
     font: 12px/18px "Gilroy", "Arial", "Helvetica", sans-serif;
     background: #0F0F15;
     padding-top: 95px;
+
+    // overflow-x: hidden;
 }
 
 .container{
@@ -226,13 +228,18 @@ h2{
 		&__to-down {
             position: absolute;
             // bottom: 40px;
-            bottom: 150px;
-            left: 50%;
-            z-index: 5;
+            // bottom: 150px;
+            // left: 50%;
+
+            top: calc(100vh - 140px);
+            right: 20px;
+
+            z-index: 25;
             a{
                 display: block;
                 width: 150px;
-                padding-top: 54px;
+                // padding-top: 54px;
+                padding-top: 75px;
                 background: url(../images/arrow-down.svg) no-repeat center top;
                 margin-left: -75px;
                 text-align: center;
@@ -243,13 +250,26 @@ h2{
                 text-align: center;
                 text-decoration: none;
                 color: rgba(255, 255, 255, 0.58);
+
+                animation: index-first-screen-arrow-to-down-bounce 1s ease-in-out infinite alternate;
                 &:hover{
                     opacity: 0.7;
                 }
+                
             }
 		}
 }
 
+
+@keyframes index-first-screen-arrow-to-down-bounce{
+    from{
+        background-position: center 0;
+    }
+
+    to{
+        background-position: center 30px;
+    }
+}
 
 .link-to-up {
     position: fixed;
@@ -442,6 +462,10 @@ h2{
     
     width: calc(100% / 6);
     margin-bottom: 90px;
+
+    img{
+        max-width: 80%;
+    }
 }
 .block-form {
     margin-bottom: 186px;
@@ -523,6 +547,11 @@ h2{
     background: grey;
 
 }
+
+#map{
+    height: 100%;
+}
+
 .block-contacts-info {
     width: 38%;
     padding-left: 81px;

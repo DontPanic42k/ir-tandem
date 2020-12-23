@@ -38,7 +38,6 @@ function setVisualBgImgWidth(){
 
 $('.visual-bg img').on('load', function(){
     setVisualBgImgWidth();
-    console.log(1);
 });
 
 $(window).on('resize', function(){

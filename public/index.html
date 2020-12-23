@@ -38,6 +38,8 @@
         </div><!-- .topbar -->
 
 
+        
+
 
         <!-- <div class="index-first-screen">
             <div class="index-first-screen__image">
@@ -79,11 +81,13 @@
                 </div>
             </div>
 
-            <div class="index-first-screen__to-down">
-                <a href="#" class="scroll-block-good">листай ниже</a>
-            </div>
         </div>
         <script src="js/visual.js"></script>
+
+        <div class="index-first-screen__to-down">
+            <a href="#" class="scroll-block-good">листай ниже</a>
+        </div>
+
 
 
         <div class="block-good" id="block-good">
@@ -257,8 +261,8 @@
 
         <div class="block-contacts">
             <div class="block-contacts-map">
-                <!-- <div id="map"></div> -->
-                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A31931793e9c47c92ee2fca05e399821713652e1a01fbf8b295408b7c74058adb&amp;width=100%25&amp;height=516&amp;lang=ru_RU&amp;scroll=true"></script>
+                <div id="map"></div>
+                <!-- <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A31931793e9c47c92ee2fca05e399821713652e1a01fbf8b295408b7c74058adb&amp;width=100%25&amp;height=516&amp;lang=ru_RU&amp;scroll=true"></script> -->
             </div>
             <div class="block-contacts-info">
                 <h2>Контакты</h2>
@@ -268,8 +272,8 @@
                 <div class="block-contacts-info__item">
                     <span class="block-contacts-info__item_grey">почта:</span> tandemufa@mail.ru
                 </div>
-                <a href="#" class="block-contacts-info__link-action block-contacts-info__link-action_route">Проложить маршрут</a>
-                <a href="#" class="block-contacts-info__link-action block-contacts-info__link-action_taxi">Вызвать такси</a>
+                <a href="#" id="getdirections" class="block-contacts-info__link-action block-contacts-info__link-action_route">Проложить маршрут</a>
+                <a href="#" id="callataxi" class="block-contacts-info__link-action block-contacts-info__link-action_taxi">Вызвать такси</a>
                 <div class="block-contacts-info__button">
                     <a href="#callorder" class="btn btn-orange" data-fancybox="">Связаться</a>
                 </div>
@@ -363,6 +367,135 @@
 <!-- / Модальная форма -->
 
 
+
+
+
+
+<!-- <script src="https://api-maps.yandex.ru/2.1/?apikey=e68ad316-957b-45bd-8f91-b88b78ccf785&lang=ru_RU"></script> -->
+<script>
+let lazyscript = false;
+function lazyloading() {
+    if (lazyscript === false) {
+        lazyscript = true;
+        setTimeout(() => {
+            let yandexmapJS = document.createElement('script');
+            yandexmapJS.src = '//api-maps.yandex.ru/2.1/?apikey=e68ad316-957b-45bd-8f91-b88b78ccf785&load=package.standard&lang=ru-RU&onload=getYaMap';
+            document.body.appendChild(yandexmapJS);
+        }, 500)
+    }
+}
+window.addEventListener('mousemove', lazyloading);
+window.addEventListener('scroll', lazyloading);
+    
+function getYaMap(){
+    if ($("#map").length) {
+        var myMap;
+        ymaps.ready(init);
+        function init() {
+            myMap = new ymaps.Map('map', {
+                center: [54.71336253526406, 55.993670325281215],
+                zoom: 16,
+                controls: ['zoomControl']
+            });
+            myMap.behaviors.disable('scrollZoom')
+            myPlacemark = new ymaps.Placemark([54.71336253526406, 55.993670325281215], {
+                hintContent: 'Россия, Республика Башкортостан, Уфа, улица Менделеева, 137',
+            }, {
+                iconLayout: 'default#image',
+                iconImageOffset: [-30, -42]
+            }),
+            myMap.geoObjects.add(myPlacemark);
+        }
+        
+        $('#callataxi').bind({
+            click: function (e) {
+                e.preventDefault();
+                
+                myMap.destroy();
+                myMap = null;
+                if (!myMap) {
+                    myMap = new ymaps.Map('map', {
+                        center: [54.71336253526406, 55.993670325281215],
+                        zoom: 16,
+                        controls: []
+                    });
+                    var routePanelControl = new ymaps.control.RoutePanel({
+                        options: {
+                            showHeader: true,
+                            title: 'Вызов такси',
+                            routePanelTypes: {
+                                taxi: true
+                            },
+                            maxWidth: '210px'
+                        }
+                    });
+                    routePanelControl.routePanel.state.set({
+                        type: "taxi",
+                        to: 'Россия, Республика Башкортостан, Уфа, улица Менделеева, 137',
+                        toEnabled: false
+                    });
+                    var zoomControl = new ymaps.control.ZoomControl({
+                        options: {
+                            size: 'small',
+                            float: 'none',
+                            position: {
+                                bottom: 300,
+                                right: 10
+                            }
+                        }
+                    });
+                    myMap.controls.add(routePanelControl).add(zoomControl);
+                    routePanelControl.routePanel.geolocate('from');
+                    myMap.behaviors.disable('scrollZoom');
+                }
+            }
+        });
+        $('#getdirections').bind({
+            click: function (e) {
+                e.preventDefault();
+
+                myMap.destroy();
+                myMap = null;
+                if (!myMap) {
+                    myMap = new ymaps.Map('map', {
+                        center: [54.71336253526406, 55.993670325281215],
+                        zoom: 16,
+                        controls: ['routePanelControl']
+                    });
+                    var control = myMap.controls.get('routePanelControl');
+                    control.routePanel.state.set({
+                        type: 'auto',
+                        fromEnabled: true,
+                        to: 'Россия, Республика Башкортостан, Уфа, улица Менделеева, 137',
+                        toEnabled: true
+                    });
+                    control.routePanel.options.set({
+                        allowSwitch: false,
+                        reverseGeocoding: true,
+                        types: {
+                            auto: true,
+                            pedestrian: true,
+                            masstransit: true
+                        }
+                    });
+                    var zoomControl = new ymaps.control.ZoomControl({
+                        options: {
+                            size: 'small',
+                            float: 'none',
+                            position: {
+                                bottom: 300,
+                                right: 10
+                            }
+                        }
+                    });
+                    myMap.controls.add(zoomControl);
+                    myMap.behaviors.disable('scrollZoom');
+                }
+            }
+        });
+    }
+}
+</script>
 
 
     

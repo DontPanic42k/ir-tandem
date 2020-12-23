@@ -2,12 +2,11 @@
     width: 100%;
     overflow-x: hidden;
     position: relative;
+    margin-bottom: 117px;
 }
 
 .visual {
     position: relative;
-    margin-bottom: 117px;
-
     // width: 100vw;
     
     // width: 100%;
@@ -302,5 +301,20 @@
     & .visual-elements__item a[data-id="2"]{
         top: 39.73%;
         left: 34.74%;
+    }
+}
+
+
+.visual-screen .visual-elements__item a{
+    animation: visual-elements-item-anim 1s ease-in-out infinite alternate;
+}
+
+@keyframes visual-elements-item-anim{
+    from{
+        box-shadow: 0 0 10px 0px rgba(0,0,0, 0.4);
+    }
+
+    to{
+        box-shadow: 0 0 10px 10px rgba(0,0,0, 0.4);
     }
 }

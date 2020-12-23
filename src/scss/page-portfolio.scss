@@ -2,17 +2,28 @@
     
 }
 
+.page-portfolio-list-wrapper{
+    background: #1D1D20;
+    padding-bottom: 60px;
+    margin-bottom: 100px;
+    &-button{
+        text-align: center;
+    }
+}
+
 .page-portfolio-list {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-bottom: 156px;
+    // margin-bottom: 156px;
+    margin-bottom: 20px;
 }
 .page-portfolio-item {
-    width: calc(100% / 2 - 33px * 1 / 2);
+    // width: calc(100% / 2 - 33px * 1 / 2);
+    width: calc(100% / 3 - 20px * 2 / 3);
     margin-bottom: 20px;
-    background: #1D1D20;
+    // background: #1D1D20;
 
         a{
             text-decoration: none;
